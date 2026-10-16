@@ -1,0 +1,8 @@
+{
+  "bug": "scrapy-31",
+  "modelo": "gemini-3.5-flash-lite",
+  "llamadas": 2,
+  "tokens_entrada": 4643,
+  "tokens_salida": 280,
+  "segundos": 6.0
+}

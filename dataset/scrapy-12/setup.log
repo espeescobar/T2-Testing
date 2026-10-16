@@ -1,0 +1,211 @@
+ERROR: Ignored the following versions that require a different python version: 0.4.0 Requires-Python >=3.9; 0.5.0 Requires-Python >=3.9; 0.6.0 Requires-Python >=3.10; 0.6.1 Requires-Python >=3.10; 0.6.2 Requires-Python >=3.10; 0.7.0 Requires-Python >=3.10; 1.10.0 Requires-Python >=3.9; 1.11.0 Requires-Python >=3.10; 1.12.0 Requires-Python >=3.10; 1.12.1 Requires-Python >=3.10; 1.25.0 Requires-Python >=3.9; 1.25.1 Requires-Python >=3.9; 1.25.2 Requires-Python >=3.9; 1.26.0 Requires-Python <3.13,>=3.9; 1.26.1 Requires-Python <3.13,>=3.9; 1.26.2 Requires-Python >=3.9; 1.26.3 Requires-Python >=3.9; 1.26.4 Requires-Python >=3.9; 1.3.0 Requires-Python >=3.9; 1.4.0 Requires-Python >=3.10; 1.5.0 Requires-Python >=3.10; 1.6.0 Requires-Python >=3.9; 10.6.0 Requires-Python >=3.9; 10.7.0 Requires-Python >=3.9; 10.8.0 Requires-Python >=3.9; 11.0.0 Requires-Python >=3.10; 11.0.0 Requires-Python >=3.9; 11.0.1 Requires-Python >=3.10; 11.0.2 Requires-Python >=3.10; 11.1.0 Requires-Python >=3.10; 11.1.0 Requires-Python >=3.9; 11.2.1 Requires-Python >=3.9; 11.3.0 Requires-Python >=3.9; 12.0.0 Requires-Python >=3.10; 12.1.0 Requires-Python >=3.10; 12.1.1 Requires-Python >=3.10; 12.2.0 Requires-Python >=3.10; 12.3.0 Requires-Python >=3.10; 2.0.0 Requires-Python >=3.9; 2.0.0b1 Requires-Python >=3.9; 2.0.1 Requires-Python >=3.9; 2.0.2 Requires-Python >=3.9; 2.0.9a1 Requires-Python >=3.9; 2.1.0 Requires-Python >=3.10; 2.1.1 Requires-Python >=3.10; 2.1.2 Requires-Python >=3.10; 2.1.3 Requires-Python >=3.10; 2.2.0 Requires-Python >=3.10; 2.2.1 Requires-Python >=3.10; 2.2.2 Requires-Python >=3.10; 2.2.3 Requires-Python >=3.10; 2.2.4 Requires-Python >=3.10; 2.2.5 Requires-Python >=3.10; 2.2.6 Requires-Python >=3.10; 2.3.0 Requires-Python >=3.11; 2.3.1 Requires-Python >=3.11; 2.3.2 Requires-Python >=3.11; 2.3.3 Requires-Python >=3.11; 2.3.4 Requires-Python >=3.11; 2.3.5 Requires-Python >=3.11; 2.4.0 Requires-Python >=3.11; 2.4.0rc1 Requires-Python >=3.11; 2.4.1 Requires-Python >=3.11; 2.4.2 Requires-Python >=3.11; 2.4.3 Requires-Python >=3.11; 2.4.4 Requires-Python >=3.11; 2.4.5 Requires-Python >=3.11; 2.4.6 Requires-Python >=3.11; 2.5.0 Requires-Python >=3.12; 2.5.0rc1 Requires-Python >=3.12; 2.5.1 Requires-Python >=3.12; 2.5.2 Requires-Python >=3.12; 2.5.3 Requires-Python >=3.12; 25.4.0 Requires-Python >=3.9; 25.4.16 Requires-Python >=3.9; 26.1.0 Requires-Python >=3.9; 26.3 Requires-Python >=3.9; 26.3.0 Requires-Python >=3.9; 26.4.0 Requires-Python >=3.9; 3.0 Requires-Python >=3.10; 3.0.0a2 Requires-Python >=3.9; 3.16 Requires-Python >=3.9; 3.17 Requires-Python >=3.9; 3.18 Requires-Python >=3.9; 3.19 Requires-Python >=3.9; 3.2.0 Requires-Python >=3.9; 3.2.0b1 Requires-Python >=3.9; 3.2.0b2 Requires-Python >=3.9; 3.2.0b3 Requires-Python >=3.9; 3.2.0rc1 Requires-Python >=3.9; 3.2.1 Requires-Python >=3.9; 3.2.2 Requires-Python >=3.9; 3.2.3 Requires-Python >=3.9; 3.2.4 Requires-Python >=3.9; 3.2.5 Requires-Python >=3.9; 3.20 Requires-Python >=3.9; 3.3.0 Requires-Python >=3.9; 3.3.0a1 Requires-Python >=3.9; 3.3.0b1 Requires-Python >=3.9; 3.3.1 Requires-Python >=3.9; 3.3.2 Requires-Python >=3.9; 3.3.3 Requires-Python >=3.9; 4.1.0 Requires-Python >=3.10; 4.1.0 Requires-Python >=3.9; 4.2.0 Requires-Python >=3.10; 4.2.0 Requires-Python >=3.9; 4.3.0 Requires-Python >=3.9; 4.4.0 Requires-Python >=3.10; 4.4.1 Requires-Python >=3.10; 48.0.0 Requires-Python !=3.9.0,!=3.9.1,>=3.9; 48.0.1 Requires-Python !=3.9.0,!=3.9.1,>=3.9; 49.0.0 Requires-Python !=3.9.0,!=3.9.1,>=3.9; 50.0.0 Requires-Python !=3.9.0,!=3.9.1,>=3.9; 50.0.1 Requires-Python !=3.9.0,!=3.9.1,>=3.9; 6.0.0 Requires-Python >=3.10; 6.0.0.post1 Requires-Python >=3.10; 6.1.0 Requires-Python >=3.9; 7.0.0 Requires-Python >=3.10; 7.0.0a1 Requires-Python >=3.9; 7.0.0a2 Requires-Python >=3.9; 7.0.0a3 Requires-Python >=3.9; 7.0.0b1 Requires-Python >=3.9; 7.0.0rc4 Requires-Python >=3.10; 7.0.1 Requires-Python >=3.10; 7.1.0 Requires-Python >=3.10; 7.2.0 Requires-Python >=3.10; 7.3.0 Requires-Python >=3.10; 7.4.0.post1 Requires-Python >=3.10; 7.4.0.post2 Requires-Python >=3.10; 7.4.1 Requires-Python >=3.10; 7.4.2 Requires-Python >=3.10; 7.4.3 Requires-Python >=3.10; 7.5.0 Requires-Python >=3.10; 7.5.1 Requires-Python >=3.10; 7.6.0 Requires-Python >=3.10; 8.4.0 Requires-Python >=3.9; 8.4.1 Requires-Python >=3.9; 8.4.2 Requires-Python >=3.9; 9.0.0 Requires-Python >=3.10; 9.0.1 Requires-Python >=3.10; 9.0.2 Requires-Python >=3.10; 9.0.3 Requires-Python >=3.10; 9.1.0 Requires-Python >=3.10; 9.1.1 Requires-Python >=3.10
+ERROR: Could not find a version that satisfies the requirement pywin32==227 (from versions: none)
+ERROR: No matching distribution found for pywin32==227
+(instalación en bloque falló; instalando paquete a paquete con las versiones exactas)
+  no se pudo instalar: pywin32==227
+(el proyecto no se instaló en modo editable; se usa desde el directorio)
+requisitos de test: tests/requirements-py3.txt
+  omitido: pytest==2.9.2
+requisitos de test: tests/requirements.txt
+  omitido: mitmproxy==0.10.1
+  omitido: netlib==0.10.1
+  omitido: pytest==2.9.2
+Requirement already satisfied: Twisted in ./env/lib/python3.8/site-packages (20.3.0)
+Requirement already satisfied: zope.interface>=4.4.2 in ./env/lib/python3.8/site-packages (from Twisted) (5.1.0)
+Requirement already satisfied: constantly>=15.1 in ./env/lib/python3.8/site-packages (from Twisted) (15.1.0)
+Requirement already satisfied: incremental>=16.10.1 in ./env/lib/python3.8/site-packages (from Twisted) (17.5.0)
+Requirement already satisfied: Automat>=0.3.0 in ./env/lib/python3.8/site-packages (from Twisted) (20.2.0)
+Requirement already satisfied: hyperlink>=17.1.1 in ./env/lib/python3.8/site-packages (from Twisted) (19.0.0)
+Requirement already satisfied: PyHamcrest!=1.10.0,>=1.9.0 in ./env/lib/python3.8/site-packages (from Twisted) (2.0.2)
+Requirement already satisfied: attrs>=19.2.0 in ./env/lib/python3.8/site-packages (from Twisted) (19.3.0)
+Requirement already satisfied: six in ./env/lib/python3.8/site-packages (from Automat>=0.3.0->Twisted) (1.15.0)
+Requirement already satisfied: idna>=2.5 in ./env/lib/python3.8/site-packages (from hyperlink>=17.1.1->Twisted) (2.9)
+Requirement already satisfied: setuptools in ./env/lib/python3.8/site-packages (from zope.interface>=4.4.2->Twisted) (69.5.1)
+
+[notice] A new release of pip is available: 23.3.2 -> 25.0.1
+[notice] To update, run: pip install --upgrade pip
+Requirement already satisfied: pytest in ./env/lib/python3.8/site-packages (5.4.2)
+Requirement already satisfied: py>=1.5.0 in ./env/lib/python3.8/site-packages (from pytest) (1.8.1)
+Requirement already satisfied: packaging in ./env/lib/python3.8/site-packages (from pytest) (20.4)
+Requirement already satisfied: attrs>=17.4.0 in ./env/lib/python3.8/site-packages (from pytest) (19.3.0)
+Requirement already satisfied: more-itertools>=4.0.0 in ./env/lib/python3.8/site-packages (from pytest) (8.3.0)
+Requirement already satisfied: pluggy<1.0,>=0.12 in ./env/lib/python3.8/site-packages (from pytest) (0.13.1)
+Requirement already satisfied: wcwidth in ./env/lib/python3.8/site-packages (from pytest) (0.1.9)
+Requirement already satisfied: pyparsing>=2.0.2 in ./env/lib/python3.8/site-packages (from packaging->pytest) (2.4.7)
+Requirement already satisfied: six in ./env/lib/python3.8/site-packages (from packaging->pytest) (1.15.0)
+
+[notice] A new release of pip is available: 23.3.2 -> 25.0.1
+[notice] To update, run: pip install --upgrade pip
+Requirement already satisfied: Pillow in ./env/lib/python3.8/site-packages (7.1.2)
+
+[notice] A new release of pip is available: 23.3.2 -> 25.0.1
+[notice] To update, run: pip install --upgrade pip
+Requirement already satisfied: utils in ./env/lib/python3.8/site-packages (1.0.1)
+
+[notice] A new release of pip is available: 23.3.2 -> 25.0.1
+[notice] To update, run: pip install --upgrade pip
+Collecting mitmproxy
+  Downloading mitmproxy-8.0.0-py3-none-any.whl.metadata (5.3 kB)
+Collecting asgiref<3.6,>=3.2.10 (from mitmproxy)
+  Downloading asgiref-3.5.2-py3-none-any.whl.metadata (9.1 kB)
+Collecting blinker<1.5,>=1.4 (from mitmproxy)
+  Downloading blinker-1.4.tar.gz (111 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 111.5/111.5 kB 2.8 MB/s eta 0:00:00
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Collecting Brotli<1.1,>=1.0 (from mitmproxy)
+  Downloading Brotli-1.0.9-cp38-cp38-manylinux1_x86_64.whl.metadata (1.4 kB)
+Requirement already satisfied: certifi>=2019.9.11 in ./env/lib/python3.8/site-packages (from mitmproxy) (2020.4.5.1)
+Collecting cryptography<37,>=36 (from mitmproxy)
+  Downloading cryptography-36.0.2-cp36-abi3-manylinux_2_24_x86_64.whl.metadata (5.4 kB)
+Collecting flask<2.1,>=1.1.1 (from mitmproxy)
+  Downloading Flask-2.0.3-py3-none-any.whl.metadata (3.8 kB)
+Collecting h11<0.14,>=0.11 (from mitmproxy)
+  Downloading h11-0.13.0-py3-none-any.whl.metadata (8.2 kB)
+Collecting h2<5,>=4.1 (from mitmproxy)
+  Downloading h2-4.1.0-py3-none-any.whl.metadata (3.6 kB)
+Collecting hyperframe<7,>=6.0 (from mitmproxy)
+  Downloading hyperframe-6.0.1-py3-none-any.whl.metadata (2.7 kB)
+Collecting kaitaistruct<0.10,>=0.7 (from mitmproxy)
+  Downloading kaitaistruct-0.9.tar.gz (5.5 kB)
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Collecting ldap3<2.10,>=2.8 (from mitmproxy)
+  Downloading ldap3-2.9.1-py2.py3-none-any.whl.metadata (5.4 kB)
+Collecting msgpack<1.1.0,>=1.0.0 (from mitmproxy)
+  Downloading msgpack-1.0.8-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (9.1 kB)
+Collecting passlib<1.8,>=1.6.5 (from mitmproxy)
+  Downloading passlib-1.7.4-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting protobuf<3.20,>=3.14 (from mitmproxy)
+  Downloading protobuf-3.19.6-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (787 bytes)
+Collecting pyOpenSSL<22.1,>=21.0 (from mitmproxy)
+  Downloading pyOpenSSL-22.0.0-py2.py3-none-any.whl.metadata (7.8 kB)
+Requirement already satisfied: pyparsing<3.1,>=2.4.2 in ./env/lib/python3.8/site-packages (from mitmproxy) (2.4.7)
+Collecting pyperclip<1.9,>=1.6.0 (from mitmproxy)
+  Downloading pyperclip-1.8.2.tar.gz (20 kB)
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Collecting ruamel.yaml<0.18,>=0.16 (from mitmproxy)
+  Downloading ruamel.yaml-0.17.40-py3-none-any.whl.metadata (19 kB)
+Requirement already satisfied: setuptools in ./env/lib/python3.8/site-packages (from mitmproxy) (69.5.1)
+Collecting sortedcontainers<2.5,>=2.3 (from mitmproxy)
+  Using cached sortedcontainers-2.4.0-py2.py3-none-any.whl.metadata (10 kB)
+Collecting tornado<7,>=6.1 (from mitmproxy)
+  Using cached tornado-6.4.2-cp38-abi3-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.5 kB)
+Collecting urwid<2.2,>=2.1.1 (from mitmproxy)
+  Downloading urwid-2.1.2.tar.gz (634 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 634.6/634.6 kB 6.7 MB/s eta 0:00:00
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Collecting wsproto<1.2,>=1.0 (from mitmproxy)
+  Downloading wsproto-1.1.0-py3-none-any.whl.metadata (5.6 kB)
+Collecting publicsuffix2<3,>=2.20190812 (from mitmproxy)
+  Downloading publicsuffix2-2.20191221-py2.py3-none-any.whl.metadata (13 kB)
+Collecting zstandard<0.18,>=0.11 (from mitmproxy)
+  Downloading zstandard-0.17.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.6 kB)
+Requirement already satisfied: cffi>=1.12 in ./env/lib/python3.8/site-packages (from cryptography<37,>=36->mitmproxy) (1.14.0)
+Collecting Werkzeug>=2.0 (from flask<2.1,>=1.1.1->mitmproxy)
+  Using cached werkzeug-3.0.6-py3-none-any.whl.metadata (3.7 kB)
+Collecting Jinja2>=3.0 (from flask<2.1,>=1.1.1->mitmproxy)
+  Using cached jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting itsdangerous>=2.0 (from flask<2.1,>=1.1.1->mitmproxy)
+  Using cached itsdangerous-2.2.0-py3-none-any.whl.metadata (1.9 kB)
+Collecting click>=7.1.2 (from flask<2.1,>=1.1.1->mitmproxy)
+  Using cached click-8.1.8-py3-none-any.whl.metadata (2.3 kB)
+Collecting hpack<5,>=4.0 (from h2<5,>=4.1->mitmproxy)
+  Downloading hpack-4.0.0-py3-none-any.whl.metadata (2.5 kB)
+Requirement already satisfied: pyasn1>=0.4.6 in ./env/lib/python3.8/site-packages (from ldap3<2.10,>=2.8->mitmproxy) (0.4.8)
+Collecting ruamel.yaml.clib>=0.2.7 (from ruamel.yaml<0.18,>=0.16->mitmproxy)
+  Downloading ruamel.yaml.clib-0.2.8-cp38-cp38-manylinux_2_5_x86_64.manylinux1_x86_64.whl.metadata (2.2 kB)
+Requirement already satisfied: pycparser in ./env/lib/python3.8/site-packages (from cffi>=1.12->cryptography<37,>=36->mitmproxy) (2.20)
+Collecting MarkupSafe>=2.0 (from Jinja2>=3.0->flask<2.1,>=1.1.1->mitmproxy)
+  Using cached MarkupSafe-2.1.5-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (3.0 kB)
+Downloading mitmproxy-8.0.0-py3-none-any.whl (1.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 8.6 MB/s eta 0:00:00
+Downloading asgiref-3.5.2-py3-none-any.whl (22 kB)
+Downloading Brotli-1.0.9-cp38-cp38-manylinux1_x86_64.whl (357 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 357.2/357.2 kB 5.4 MB/s eta 0:00:00
+Downloading cryptography-36.0.2-cp36-abi3-manylinux_2_24_x86_64.whl (3.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.6/3.6 MB 8.5 MB/s eta 0:00:00
+Downloading Flask-2.0.3-py3-none-any.whl (95 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 95.6/95.6 kB 2.7 MB/s eta 0:00:00
+Downloading h11-0.13.0-py3-none-any.whl (58 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 58.2/58.2 kB 1.6 MB/s eta 0:00:00
+Downloading h2-4.1.0-py3-none-any.whl (57 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 57.5/57.5 kB 1.7 MB/s eta 0:00:00
+Downloading hyperframe-6.0.1-py3-none-any.whl (12 kB)
+Downloading ldap3-2.9.1-py2.py3-none-any.whl (432 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 432.2/432.2 kB 6.8 MB/s eta 0:00:00
+Downloading msgpack-1.0.8-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (390 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 390.5/390.5 kB 6.0 MB/s eta 0:00:00
+Downloading passlib-1.7.4-py2.py3-none-any.whl (525 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 525.6/525.6 kB 6.7 MB/s eta 0:00:00
+Downloading protobuf-3.19.6-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 8.7 MB/s eta 0:00:00
+Downloading publicsuffix2-2.20191221-py2.py3-none-any.whl (89 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 89.0/89.0 kB 3.2 MB/s eta 0:00:00
+Downloading pyOpenSSL-22.0.0-py2.py3-none-any.whl (55 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 55.8/55.8 kB 246.5 kB/s eta 0:00:00
+Downloading ruamel.yaml-0.17.40-py3-none-any.whl (113 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 113.7/113.7 kB 4.0 MB/s eta 0:00:00
+Using cached sortedcontainers-2.4.0-py2.py3-none-any.whl (29 kB)
+Using cached tornado-6.4.2-cp38-abi3-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (437 kB)
+Downloading wsproto-1.1.0-py3-none-any.whl (24 kB)
+Downloading zstandard-0.17.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.5/2.5 MB 7.3 MB/s eta 0:00:00
+Using cached click-8.1.8-py3-none-any.whl (98 kB)
+Downloading hpack-4.0.0-py3-none-any.whl (32 kB)
+Using cached itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+Using cached jinja2-3.1.6-py3-none-any.whl (134 kB)
+Downloading ruamel.yaml.clib-0.2.8-cp38-cp38-manylinux_2_5_x86_64.manylinux1_x86_64.whl (596 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 596.0/596.0 kB 8.1 MB/s eta 0:00:00
+Using cached werkzeug-3.0.6-py3-none-any.whl (227 kB)
+Using cached MarkupSafe-2.1.5-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (26 kB)
+Building wheels for collected packages: blinker, kaitaistruct, pyperclip, urwid
+  Building wheel for blinker (setup.py): started
+  Building wheel for blinker (setup.py): finished with status 'done'
+  Created wheel for blinker: filename=blinker-1.4-py3-none-any.whl size=13459 sha256=6774007264a2d6da478524659c6e692577271090ba191611f41bcf026c1fa86e
+  Stored in directory: /home/espeescobar/.cache/pip/wheels/b7/a5/68/fe632054a5eadd531c7a49d740c50eb6adfbeca822b4eab8d4
+  Building wheel for kaitaistruct (setup.py): started
+  Building wheel for kaitaistruct (setup.py): finished with status 'done'
+  Created wheel for kaitaistruct: filename=kaitaistruct-0.9-py2.py3-none-any.whl size=5498 sha256=193c7cd718a86ea0f718330aa3787b42296f242fc81ee28e698ba4a2e50102b6
+  Stored in directory: /home/espeescobar/.cache/pip/wheels/be/fc/03/9898405536cebab5df6b006d92ae33dfc29ecdb47079597546
+  Building wheel for pyperclip (setup.py): started
+  Building wheel for pyperclip (setup.py): finished with status 'done'
+  Created wheel for pyperclip: filename=pyperclip-1.8.2-py3-none-any.whl size=11124 sha256=dba4001805665b002e27ec8fe8938e52e36b4f5f8647dcf31bc3a732cd0667f5
+  Stored in directory: /home/espeescobar/.cache/pip/wheels/7f/1a/65/84ff8c386bec21fca6d220ea1f5498a0367883a78dd5ba6122
+  Building wheel for urwid (setup.py): started
+  Building wheel for urwid (setup.py): finished with status 'done'
+  Created wheel for urwid: filename=urwid-2.1.2-cp38-cp38-linux_x86_64.whl size=257019 sha256=d44732f38aaeba04c4a9d48c25f2697049a8cc51d9eb2125ad9a235035a6cd80
+  Stored in directory: /home/espeescobar/.cache/pip/wheels/28/71/e4/38b5d81438105d0e3db5016cf2eea6fa796d89d96a04451d4d
+Successfully built blinker kaitaistruct pyperclip urwid
+Installing collected packages: urwid, sortedcontainers, pyperclip, publicsuffix2, passlib, Brotli, blinker, zstandard, tornado, ruamel.yaml.clib, protobuf, msgpack, MarkupSafe, ldap3, kaitaistruct, itsdangerous, hyperframe, hpack, h11, click, asgiref, wsproto, Werkzeug, ruamel.yaml, Jinja2, h2, cryptography, pyOpenSSL, flask, mitmproxy
+  Attempting uninstall: hyperframe
+    Found existing installation: hyperframe 5.2.0
+    Uninstalling hyperframe-5.2.0:
+      Successfully uninstalled hyperframe-5.2.0
+  Attempting uninstall: hpack
+    Found existing installation: hpack 3.0.0
+    Uninstalling hpack-3.0.0:
+      Successfully uninstalled hpack-3.0.0
+  Attempting uninstall: h2
+    Found existing installation: h2 3.2.0
+    Uninstalling h2-3.2.0:
+      Successfully uninstalled h2-3.2.0
+  Attempting uninstall: cryptography
+    Found existing installation: cryptography 2.9.2
+    Uninstalling cryptography-2.9.2:
+      Successfully uninstalled cryptography-2.9.2
+  Attempting uninstall: pyOpenSSL
+    Found existing installation: pyOpenSSL 19.1.0
+    Uninstalling pyOpenSSL-19.1.0:
+      Successfully uninstalled pyOpenSSL-19.1.0
+Successfully installed Brotli-1.0.9 Jinja2-3.1.6 MarkupSafe-2.1.5 Werkzeug-3.0.6 asgiref-3.5.2 blinker-1.4 click-8.1.8 cryptography-36.0.2 flask-2.0.3 h11-0.13.0 h2-4.1.0 hpack-4.0.0 hyperframe-6.0.1 itsdangerous-2.2.0 kaitaistruct-0.9 ldap3-2.9.1 mitmproxy-8.0.0 msgpack-1.0.8 passlib-1.7.4 protobuf-3.19.6 publicsuffix2-2.20191221 pyOpenSSL-22.0.0 pyperclip-1.8.2 ruamel.yaml-0.17.40 ruamel.yaml.clib-0.2.8 sortedcontainers-2.4.0 tornado-6.4.2 urwid-2.1.2 wsproto-1.1.0 zstandard-0.17.0
+
+[notice] A new release of pip is available: 23.3.2 -> 25.0.1
+[notice] To update, run: pip install --upgrade pip
+Requirement already satisfied: leveldb in ./env/lib/python3.8/site-packages (0.201)
+
+[notice] A new release of pip is available: 23.3.2 -> 25.0.1
+[notice] To update, run: pip install --upgrade pip
+Entorno listo: Python 3.8.3

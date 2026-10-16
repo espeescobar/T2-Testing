@@ -1,0 +1,39 @@
+{
+  "regiones": [
+    {
+      "archivo": "black.py",
+      "inicio": 2934,
+      "fin": 2962,
+      "funcion": "gen_python_files_in_dir"
+    },
+    {
+      "archivo": "blib2to3/pgen2/grammar.py",
+      "inicio": 115,
+      "fin": 128,
+      "funcion": "Grammar.report"
+    },
+    {
+      "archivo": "black.py",
+      "inicio": 3006,
+      "fin": 3020,
+      "funcion": "Report.done"
+    },
+    {
+      "archivo": "black.py",
+      "inicio": 3022,
+      "fin": 3025,
+      "funcion": "Report.failed"
+    },
+    {
+      "archivo": "black.py",
+      "inicio": 3027,
+      "fin": 3029,
+      "funcion": "Report.path_ignored"
+    }
+  ],
+  "analisis": "El test falla en gen_python_files_in_dir al intentar resolver una ruta relativa fuera de la raíz cuando no es un enlace simbólico.",
+  "tests_pasaban": false,
+  "salida_tests": "======================================================================\nERROR: test_symlink_out_of_root_directory (tests.test_black.BlackTestCase)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/espeescobar/Testing/T2/dataset/black-16/repo/tests/test_black.py\", line 1183, in test_symlink_out_of_root_directory\n    list(black.gen_python_files_in_dir(path, root, include, exclude, report))\n  File \"/home/espeescobar/Testing/T2/dataset/black-16/repo/black.py\", line 2948, in gen_python_files_in_dir\n    normalized_path = \"/\" + child.resolve().relative_to(root).as_posix()\n  File \"/home/espeescobar/.pyenv/versions/3.8.3/lib/python3.8/pathlib.py\", line 904, in relative_to\n    raise ValueError(\"{!r} does not start with {!r}\"\nValueError: '/a/b/c' does not start with '/home/espeescobar/Testing/T2/dataset/black-16/repo/tests'\n\n----------------------------------------------------------------------\nRan 1 test in 0.005s\n\nFAILED (errors=1)\n",
+  "codigo_test": "# tests/test_black.py\n    def test_symlink_out_of_root_directory(self) -> None:\n        # prepare argumens\n        path = MagicMock()\n        root = THIS_DIR\n        child = MagicMock()\n        include = re.compile(black.DEFAULT_INCLUDES)\n        exclude = re.compile(black.DEFAULT_EXCLUDES)\n        report = black.Report()\n\n        # set the behavior of mock arguments\n        # child should behave like a symlink which resolved path is clearly\n        # outside of the root directory\n        path.iterdir.return_value = [child]\n        child.resolve.return_value = Path(\"/a/b/c\")\n        child.is_symlink.return_value = True\n\n        # call the method\n        # it should not raise any error\n        list(black.gen_python_files_in_dir(path, root, include, exclude, report))\n\n        # check the call of the methods of the mock objects\n        path.iterdir.assert_called_once()\n        child.resolve.assert_called_once()\n        child.is_symlink.assert_called_once()\n\n        # set the behavior of mock arguments\n        # child should behave like a strange file which resolved path is clearly\n        # outside of the root directory\n        child.is_symlink.return_value = False\n\n        # call the method\n        # it should raise a ValueError\n        with self.assertRaises(ValueError):\n            list(black.gen_python_files_in_dir(path, root, include, exclude, report))\n\n        # check the call of the methods of the mock objects\n        path.iterdir.assert_called()\n        self.assertEqual(path.iterdir.call_count, 2)\n        child.resolve.assert_called()\n        self.assertEqual(child.resolve.call_count, 2)\n        child.is_symlink.assert_called()\n        self.assertEqual(child.is_symlink.call_count, 2)\n\n\n\n",
+  "datos_test": {}
+}

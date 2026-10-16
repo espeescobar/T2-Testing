@@ -1,0 +1,9 @@
+{
+  "regiones": [
+    {
+      "archivo": "fastapi/encoders.py",
+      "inicio": 1,
+      "fin": 150
+    }
+  ]
+}

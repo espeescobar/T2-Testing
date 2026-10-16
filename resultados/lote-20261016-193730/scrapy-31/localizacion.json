@@ -1,0 +1,9 @@
+{
+  "regiones": [
+    {
+      "archivo": "scrapy/http/cookies.py",
+      "inicio": 170,
+      "fin": 180
+    }
+  ]
+}

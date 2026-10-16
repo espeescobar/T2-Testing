@@ -1,0 +1,39 @@
+{
+  "regiones": [
+    {
+      "archivo": "scrapy/pipelines/images.py",
+      "inicio": 130,
+      "fin": 144,
+      "funcion": "ImagesPipeline.convert_image"
+    },
+    {
+      "archivo": "scrapy/loader/__init__.py",
+      "inicio": 46,
+      "fin": 51,
+      "funcion": "ItemLoader.item"
+    },
+    {
+      "archivo": "scrapy/utils/python.py",
+      "inicio": 110,
+      "fin": 120,
+      "funcion": "to_bytes"
+    },
+    {
+      "archivo": "scrapy/http/response/__init__.py",
+      "inicio": 19,
+      "fin": 25,
+      "funcion": "Response.__init__"
+    },
+    {
+      "archivo": "scrapy/http/response/__init__.py",
+      "inicio": 27,
+      "fin": 35,
+      "funcion": "Response.meta"
+    }
+  ],
+  "analisis": "La función convert_image comprueba image.format == 'PNG' pero al convertir una imagen RGBA a 'P', pierde el formato PNG original, fallando en la condición.",
+  "tests_pasaban": false,
+  "salida_tests": "/home/espeescobar/Testing/T2/dataset/scrapy-6/repo/env/lib/python3.8/site-packages/PIL/Image.py:610: ResourceWarning: unclosed file <_io.BufferedRandom name=6>\n  self.load()\n/home/espeescobar/Testing/T2/dataset/scrapy-6/repo/tests/test_pipeline_images.py:101: ResourceWarning: unclosed file <_io.BufferedRandom name=6>\n  im = _create_image('PNG', 'RGBA', SIZE, COLOUR)\n/home/espeescobar/Testing/T2/dataset/scrapy-6/repo/tests/test_pipeline_images.py:102: ResourceWarning: unclosed file <_io.BufferedRandom name=7>\n  im = im.convert('P')\n======================================================================\nFAIL: test_convert_image (tests.test_pipeline_images.ImagesPipelineTestCase)\ntest_convert_image\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-6/repo/env/lib/python3.8/site-packages/twisted/internet/defer.py\", line 151, in maybeDeferred\n    result = f(*args, **kw)\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-6/repo/env/lib/python3.8/site-packages/twisted/internet/utils.py\", line 221, in runWithWarningsSuppressed\n    reraise(exc_info[1], exc_info[2])\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-6/repo/env/lib/python3.8/site-packages/twisted/python/compat.py\", line 464, in reraise\n    raise exception.with_traceback(traceback)\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-6/repo/env/lib/python3.8/site-packages/twisted/internet/utils.py\", line 217, in runWithWarningsSuppressed\n    result = f(*a, **kw)\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-6/repo/tests/test_pipeline_images.py\", line 105, in test_convert_image\n    self.assertEquals(converted.getcolors(), [(10000, (205, 230, 255))])\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-6/repo/env/lib/python3.8/site-packages/twisted/trial/_synctest.py\", line 434, in assertEqual\n    super(_Assertions, self).assertEqual(first, second, msg)\n  File \"/home/espeescobar/.pyenv/versions/3.8.3/lib/python3.8/unittest/case.py\", line 912, in assertEqual\n    assertion_func(first, second, msg=msg)\n  File \"/home/espeescobar/.pyenv/versions/3.8.3/lib/python3.8/unittest/case.py\", line 1118, in assertListEqual\n    self.assertSequenceEqual(list1, list2, msg, seq_type=list)\n  File \"/home/espeescobar/.pyenv/versions/3.8.3/lib/python3.8/unittest/case.py\", line 1100, in assertSequenceEqual\n    self.fail(msg)\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-6/repo/env/lib/python3.8/site-packages/twisted/trial/_synctest.py\", line 377, in fail\n    raise self.failureException(msg)\ntwisted.trial.unittest.FailTest: Lists differ: [(10000, (0, 127, 255))] != [(10000, (205, 230, 255))]\n\nFirst differing element 0:\n(10000, (0, 127, 255))\n(10000, (205, 230, 255))\n\n- [(10000, (0, 127, 255))]\n?             -----\n\n+ [(10000, (205, 230, 255))]\n?           +++++++\n\n\n----------------------------------------------------------------------\nRan 1 test in 0.033s\n\nFAILED (failures=1)\n",
+  "codigo_test": "# tests/test_pipeline_images.py\n    def test_convert_image(self):\n        SIZE = (100, 100)\n        # straigh forward case: RGB and JPEG\n        COLOUR = (0, 127, 255)\n        im = _create_image('JPEG', 'RGB', SIZE, COLOUR)\n        converted, _ = self.pipeline.convert_image(im)\n        self.assertEquals(converted.mode, 'RGB')\n        self.assertEquals(converted.getcolors(), [(10000, COLOUR)])\n\n        # check that thumbnail keep image ratio\n        thumbnail, _ = self.pipeline.convert_image(converted, size=(10, 25))\n        self.assertEquals(thumbnail.mode, 'RGB')\n        self.assertEquals(thumbnail.size, (10, 10))\n\n        # transparency case: RGBA and PNG\n        COLOUR = (0, 127, 255, 50)\n        im = _create_image('PNG', 'RGBA', SIZE, COLOUR)\n        converted, _ = self.pipeline.convert_image(im)\n        self.assertEquals(converted.mode, 'RGB')\n        self.assertEquals(converted.getcolors(), [(10000, (205, 230, 255))])\n\n        # transparency case with palette: P and PNG\n        COLOUR = (0, 127, 255, 50)\n        im = _create_image('PNG', 'RGBA', SIZE, COLOUR)\n        im = im.convert('P')\n        converted, _ = self.pipeline.convert_image(im)\n        self.assertEquals(converted.mode, 'RGB')\n        self.assertEquals(converted.getcolors(), [(10000, (205, 230, 255))])\n\n\n\n",
+  "datos_test": {}
+}

@@ -1,0 +1,13 @@
+bug;resuelto;llamadas;tokens_entrada;tokens_salida;segundos
+black-12;no;2;5182;1295;11.7
+black-16;no;2;3551;746;10.9
+fastapi-16;no;2;6488;447;14.6
+fastapi-7;no;2;17321;3684;21.7
+scrapy-12;no;2;8368;1233;16.8
+scrapy-19;no;2;9340;2773;30.5
+scrapy-20;no;2;6258;309;13.8
+scrapy-21;no;;;;
+scrapy-31;no;2;6937;420;11.9
+scrapy-37;no;2;7296;3036;15.3
+scrapy-4;no;2;7703;625;12.3
+scrapy-6;no;2;11807;2861;18.7

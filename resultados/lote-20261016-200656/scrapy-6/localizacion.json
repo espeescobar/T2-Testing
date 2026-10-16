@@ -1,0 +1,9 @@
+{
+  "regiones": [
+    {
+      "archivo": "scrapy/pipelines/images.py",
+      "inicio": 1,
+      "fin": 50
+    }
+  ]
+}

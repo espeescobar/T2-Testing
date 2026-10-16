@@ -1,0 +1,3 @@
+agente/config.env
+agente/.venv/
+*:Zone.Identifier

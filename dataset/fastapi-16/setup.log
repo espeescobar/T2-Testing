@@ -1,0 +1,14 @@
+ERROR: Cannot install -r /home/espeescobar/Testing/T2/dataset/fastapi-16/requirements.txt (line 22) and starlette==0.10.1 because these package versions have conflicting dependencies.
+ERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts
+(instalación en bloque falló; instalando paquete a paquete)
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+werkzeug 3.0.6 requires MarkupSafe>=2.1.1, but you have markupsafe 1.1.1 which is incompatible.
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+fastapi 0.55.1 requires pydantic<2.0.0,>=0.32.2, but you have pydantic 0.18.2 which is incompatible.
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+fastapi 0.55.1 requires pydantic<2.0.0,>=0.32.2, but you have pydantic 0.18.2 which is incompatible.
+fastapi 0.55.1 requires starlette==0.13.2, but you have starlette 0.10.1 which is incompatible.
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+markdown 3.7 requires importlib-metadata>=4.4; python_version < "3.10", but you have importlib-metadata 1.7.0 which is incompatible.
+(el proyecto no se instaló en modo editable; se usa desde el directorio)
+Entorno listo: Python 3.8.3
