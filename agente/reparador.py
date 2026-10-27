@@ -26,7 +26,7 @@ from pathlib import Path
 from localizador import intercalar_callees
 from utils import (ejecutar_tests, consultar_gemini_json, verificar_regresiones, iniciar_linea_base,
                    esperar_linea_base, revertir_cambios, git, leer_lineas, numerar_lineas, recortar,
-                   segundos_restantes, regex_test, puede_llamar_modelo, puede_editar,
+                   segundos_restantes, regex_test, puede_llamar_modelo, listar_funciones, puede_editar,
                    marcar_reparacion_validada, reparacion_esta_validada, repo_esta_cerrado, candado_repo, linea_base, medicion,
                    estimado_test, reserva_regresion, MARGEN_CIERRE)
 
@@ -88,19 +88,21 @@ def codigo_de_region(repo: Path, region: dict) -> str:
 
 def regiones_visibles(regiones: list, intento: int) -> list:
     """El primer intento muestra la región principal y sus funciones relacionadas.
-    Cada fallo agrega una región más, con un tope de cuatro."""
+    Cada fallo agrega una región más."""
     grupos = []
     for region in regiones:
         if region.get("relacionada") and grupos:
             grupos[-1].append(region)
         else:
             grupos.append([region])
+    vecinas = 2 if intento == 0 else 4
+    tope = 4 if intento == 0 else 6
     elegidas = []
     for indice, grupo in enumerate(grupos[:1 + intento]):
         elegidas.append(grupo[0])
         if indice == 0:
-            elegidas.extend(grupo[1:3])
-    return elegidas[:4]
+            elegidas.extend(grupo[1:1 + vecinas])
+    return elegidas[:tope]
 
 
 def armar_contexto(repo: Path, regiones: list) -> str:
@@ -110,6 +112,7 @@ def armar_contexto(repo: Path, regiones: list) -> str:
     total = 0
     archivos_completos = set()
     archivos_vistos = []
+    clases_vistas = set()
     for region in regiones:
         if region["archivo"] in archivos_completos:
             continue
@@ -123,6 +126,9 @@ def armar_contexto(repo: Path, regiones: list) -> str:
             continue
         try:
             bloque = codigo_de_region(repo, region)
+            cabecera = cabecera_de_clase(repo, region, clases_vistas)
+            if cabecera:
+                bloque = cabecera + "\n\n" + bloque
         except Exception:
             continue
         if total + len(bloque) > MAX_CARACTERES_CODIGO and len(partes) > 0:
@@ -721,6 +727,27 @@ def aplicar_ediciones(repo: Path, ediciones):
             return False, f"falló la escritura ({e}); se restauraron los archivos"
     return True, ""
 
+
+def cabecera_de_clase(repo: Path, region: dict, vistas: set) -> str:
+    nombre = region.get("funcion", "")
+    if "." not in nombre:
+        return ""
+    clase = nombre.rsplit(".", 1)[0]
+    clave = (region["archivo"], clase)
+    if clave in vistas:
+        return ""
+    todas = [f for f in listar_funciones(repo) if f["archivo"] == region["archivo"]]
+    definicion = next((f for f in todas if f["tipo"] == "clase" and f["nombre"] == clase), None)
+    if definicion is None:
+        return ""
+    metodos = [f["inicio"] for f in todas if f["tipo"] == "funcion" and f["nombre"].startswith(clase + ".")]
+    fin = min(metodos) - 1 if metodos else definicion["fin"]
+    fin = min(fin, definicion["inicio"] + 30)
+    if fin < definicion["inicio"]:
+        return ""
+    vistas.add(clave)
+    return (f"### {region['archivo']} cabecera de la clase {clase} (líneas {definicion['inicio']}-{fin})\n"
+            + numerar_lineas(leer_lineas(repo, region["archivo"]), definicion["inicio"], fin))
 
 # ------------------------------------------------------------------
 # Funcion principal

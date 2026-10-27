@@ -1,37 +1,33 @@
 {
   "regiones": [
     {
-      "archivo": "scrapy/commands/bench.py",
-      "inicio": 57,
-      "fin": 59,
-      "funcion": "_BenchSpider.parse"
+      "archivo": "scrapy/http/request/__init__.py",
+      "inicio": 20,
+      "fin": 45,
+      "funcion": "Request.__init__"
     },
     {
-      "archivo": "scrapy/utils/python.py",
-      "inicio": 100,
-      "fin": 110,
-      "funcion": "to_bytes"
+      "archivo": "scrapy/http/headers.py",
+      "inicio": 10,
+      "fin": 12,
+      "funcion": "Headers.__init__",
+      "relacionada": true
     },
     {
-      "archivo": "scrapy/utils/python.py",
-      "inicio": 113,
-      "fin": 119,
-      "funcion": "to_native_str"
+      "archivo": "scrapy/http/request/__init__.py",
+      "inicio": 62,
+      "fin": 70,
+      "funcion": "Request._set_url",
+      "relacionada": true
     },
     {
-      "archivo": "scrapy/spiders/feed.py",
-      "inicio": 64,
-      "fin": 82,
-      "funcion": "XMLFeedSpider.parse"
-    },
-    {
-      "archivo": "scrapy/spiders/feed.py",
-      "inicio": 131,
-      "fin": 135,
-      "funcion": "CSVFeedSpider.parse"
+      "archivo": "scrapy/http/request/__init__.py",
+      "inicio": 77,
+      "fin": 81,
+      "funcion": "Request._set_body"
     }
   ],
-  "analisis": "Ninguno de los candidatos listados corresponde a la validación de URLs en la clase Request, ya que todos pertenecen a comandos, spiders, utilidades o cabeceras.",
+  "analisis": "La funcion _set_url es la encargada de validar el esquema de la URL y comprobar los caracteres de dos puntos, fallando en la validacion de '/foo:bar'.",
   "tests_pasaban": false,
   "salida_tests": "======================================================================\nFAIL: test_url_no_scheme (tests.test_http_request.RequestTest)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-37/repo/tests/test_http_request.py\", line 56, in test_url_no_scheme\n    self.assertRaises(ValueError, self.request_class, '/foo:bar')\nAssertionError: ValueError not raised by Request\n\n----------------------------------------------------------------------\nRan 1 test in 0.002s\n\nFAILED (failures=1)\n",
   "codigo_test": "# tests/test_http_request.py\n    def test_url_no_scheme(self):\n        self.assertRaises(ValueError, self.request_class, 'foo')\n        self.assertRaises(ValueError, self.request_class, '/foo/')\n        self.assertRaises(ValueError, self.request_class, '/foo:bar')\n\n\n",

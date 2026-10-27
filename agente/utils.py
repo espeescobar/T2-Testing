@@ -97,7 +97,7 @@ def reserva_regresion(duracion, completo: bool):
         return None
     if duracion <= 0:
         return 0.0
-    return float(duracion) * 1.5 + 10
+    return float(duracion) * 1.15 + 8
 
 
 def presupuesto_linea_base(restantes: float) -> float:
@@ -366,7 +366,7 @@ def _junit_a_conjuntos(archivo_xml: str):
     return pasan, fallan
 
 
-def tests_que_pasan(carpeta_codigo, carpeta_env, modulos: list, timeout: float, titular=None):
+def tests_que_pasan(carpeta_codigo, carpeta_env, modulos: list, timeout: float, titular=None, por_test: float = 40):
     """Corre pytest y devuelve (pasan, fallan, completo) o None si no hubo resultados.
     `completo` es False si el comando se corto por tiempo (pytest escribe el junit al final,
     asi que en ese caso normalmente no hay xml y devolvemos None)."""
@@ -381,7 +381,7 @@ def tests_que_pasan(carpeta_codigo, carpeta_env, modulos: list, timeout: float, 
     if any(str(modulo).endswith("__init__.py") for modulo in modulos):
         opciones = "-o 'python_files=__init__.py test_*.py *_test.py' "
     # pytest-timeout evita que un solo test colgado se coma el presupuesto
-    opcion_timeout = "$(python -c 'import pytest_timeout' 2>/dev/null && echo --timeout=40)"
+    opcion_timeout = f"$(python -c 'import pytest_timeout' 2>/dev/null && echo --timeout={int(por_test)})"
     comando = (
         f"source {_entrecomillar(carpeta_env / 'bin' / 'activate')} && "
         f"python -m pytest -p no:cacheprovider -q --tb=no "
@@ -505,11 +505,13 @@ def verificar_regresiones(carpeta_bug: Path, info: dict):
         print("   regresiones no verificadas: no queda tiempo para repetir la suite", flush=True)
         return "no_verificado", []
     # El tope es la duración medida más una holgura, no un máximo fijo.
-    tiempo = min(segundos_restantes() - MARGEN_CIERRE, necesario)
+    D = float(linea_base.get("duracion") or 0)
+    tiempo = min(segundos_restantes() - MARGEN_CIERRE, D * 1.5 + 10)
+    por_test = max(10.0, D * 0.5)
 
     print("   comprobando regresiones...", flush=True)
     restaurar_tests(repo)
-    resultado = tests_que_pasan(repo, repo / "env", modulos, tiempo)
+    resultado = tests_que_pasan(repo, repo / "env", modulos, tiempo, por_test=por_test)
     if resultado is None:
         print("   regresiones no verificadas: pytest no produjo resultados", flush=True)
         return "no_verificado", []

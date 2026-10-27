@@ -7,33 +7,41 @@
       "funcion": "RobotsTxtMiddleware.robot_parser"
     },
     {
+      "archivo": "scrapy/utils/httpobj.py",
+      "inicio": 8,
+      "fin": 14,
+      "funcion": "urlparse_cached",
+      "relacionada": true
+    },
+    {
+      "archivo": "scrapy/http/request/__init__.py",
+      "inicio": 19,
+      "fin": 38,
+      "funcion": "Request.__init__",
+      "relacionada": true
+    },
+    {
       "archivo": "scrapy/downloadermiddlewares/robotstxt.py",
-      "inicio": 35,
-      "fin": 40,
-      "funcion": "RobotsTxtMiddleware.process_request"
+      "inicio": 23,
+      "fin": 29,
+      "funcion": "RobotsTxtMiddleware.__init__"
     },
     {
-      "archivo": "scrapy/core/downloader/middleware.py",
-      "inicio": 33,
-      "fin": 77,
-      "funcion": "DownloaderMiddlewareManager.download"
+      "archivo": "scrapy/http/request/__init__.py",
+      "inicio": 49,
+      "fin": 57,
+      "funcion": "Request._set_url"
     },
     {
-      "archivo": "scrapy/core/engine.py",
-      "inicio": 208,
-      "fin": 213,
-      "funcion": "ExecutionEngine.download"
-    },
-    {
-      "archivo": "scrapy/log.py",
-      "inicio": 52,
-      "fin": 60,
-      "funcion": "err"
+      "archivo": "scrapy/http/request/__init__.py",
+      "inicio": 64,
+      "fin": 68,
+      "funcion": "Request._set_body"
     }
   ],
-  "analisis": "El error ocurre en robot_parser al intentar acceder a self._parsers[netloc] tras un fallo inmediato en la descarga del robots.txt.",
+  "analisis": "El error ocurre en robot_parser cuando intenta acceder a self._parsers[netloc] tras un fallo inmediato en la descarga del robots.txt.",
   "tests_pasaban": false,
-  "salida_tests": "Error downloading <GET http://site.local/robots.txt>: DNS lookup failed: Robotstxt address not found.\ntwisted.internet.error.DNSLookupError: DNS lookup failed: Robotstxt address not found.\n======================================================================\nERROR: test_robotstxt_immediate_error (tests.test_downloadermiddleware_robotstxt.RobotsTxtMiddlewareTest)\ntest_robotstxt_immediate_error\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-21/repo/env/lib/python3.8/site-packages/twisted/internet/defer.py\", line 151, in maybeDeferred\n    result = f(*args, **kw)\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-21/repo/scrapy/downloadermiddlewares/robotstxt.py\", line 65, in robot_parser\n    if isinstance(self._parsers[netloc], Deferred):\nKeyError: 'site.local'\n\n----------------------------------------------------------------------\nRan 1 test in 0.007s\n\nFAILED (errors=1)\n",
+  "salida_tests": "Error downloading <GET http://site.local/robots.txt>: DNS lookup failed: Robotstxt address not found.\ntwisted.internet.error.DNSLookupError: DNS lookup failed: Robotstxt address not found.\n======================================================================\nERROR: test_robotstxt_immediate_error (tests.test_downloadermiddleware_robotstxt.RobotsTxtMiddlewareTest)\ntest_robotstxt_immediate_error\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-21/repo/env/lib/python3.8/site-packages/twisted/internet/defer.py\", line 151, in maybeDeferred\n    result = f(*args, **kw)\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-21/repo/scrapy/downloadermiddlewares/robotstxt.py\", line 65, in robot_parser\n    if isinstance(self._parsers[netloc], Deferred):\nKeyError: 'site.local'\n\n----------------------------------------------------------------------\nRan 1 test in 0.011s\n\nFAILED (errors=1)\n",
   "codigo_test": "# tests/test_downloadermiddleware_robotstxt.py\n    def test_robotstxt_immediate_error(self):\n        self.crawler.settings.set('ROBOTSTXT_OBEY', True)\n        err = error.DNSLookupError('Robotstxt address not found')\n        def immediate_failure(request, spider):\n            deferred = Deferred()\n            deferred.errback(failure.Failure(err))\n            return deferred\n        self.crawler.engine.download.side_effect = immediate_failure\n\n        middleware = RobotsTxtMiddleware(self.crawler)\n        return self.assertNotIgnored(Request('http://site.local'), middleware)\n\n\n",
   "datos_test": {}
 }

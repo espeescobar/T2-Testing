@@ -1,22 +1,24 @@
 {
   "regiones": [
     {
-      "archivo": "scrapy/http/response/text.py",
-      "inicio": 64,
-      "fin": 73,
-      "funcion": "TextResponse.text"
+      "archivo": "scrapy/selector/unified.py",
+      "inicio": 48,
+      "fin": 67,
+      "funcion": "Selector.__init__"
     },
     {
-      "archivo": "scrapy/http/response/text.py",
-      "inicio": 107,
-      "fin": 112,
-      "funcion": "TextResponse.selector"
-    },
-    {
-      "archivo": "scrapy/utils/testsite.py",
-      "inicio": 19,
+      "archivo": "scrapy/selector/unified.py",
+      "inicio": 17,
       "fin": 20,
-      "funcion": "SiteTest.url"
+      "funcion": "_st",
+      "relacionada": true
+    },
+    {
+      "archivo": "scrapy/selector/unified.py",
+      "inicio": 23,
+      "fin": 26,
+      "funcion": "_response_from_text",
+      "relacionada": true
     },
     {
       "archivo": "scrapy/http/response/text.py",
@@ -26,14 +28,14 @@
     },
     {
       "archivo": "scrapy/http/response/text.py",
-      "inicio": 29,
-      "fin": 36,
-      "funcion": "TextResponse._set_url"
+      "inicio": 64,
+      "fin": 73,
+      "funcion": "TextResponse.text"
     }
   ],
-  "analisis": "El test fallido espera que se lance un ValueError al pasar tanto 'response' como 'text' al instanciar Selector, pero las funciones candidatas listadas son de TextResponse y SiteTest, no del constructor de Selector donde reside el bug.",
+  "analisis": "El test verifica que se lance una excepción si se reciben tanto `response` como `text`, lo cual debe validarse en el método `__init__` de `Selector`.",
   "tests_pasaban": false,
-  "salida_tests": "/home/espeescobar/Testing/T2/dataset/scrapy-12/repo/tests/test_selector.py:127: DeprecationWarning: Please use assertRaisesRegex instead.\n  with self.assertRaisesRegexp(ValueError, 'received both response and text'):\n======================================================================\nFAIL: test_selector_bad_args (tests.test_selector.SelectorTestCase)\ntest_selector_bad_args\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-12/repo/env/lib/python3.8/site-packages/twisted/internet/defer.py\", line 151, in maybeDeferred\n    result = f(*args, **kw)\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-12/repo/env/lib/python3.8/site-packages/twisted/internet/utils.py\", line 221, in runWithWarningsSuppressed\n    reraise(exc_info[1], exc_info[2])\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-12/repo/env/lib/python3.8/site-packages/twisted/python/compat.py\", line 464, in reraise\n    raise exception.with_traceback(traceback)\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-12/repo/env/lib/python3.8/site-packages/twisted/internet/utils.py\", line 217, in runWithWarningsSuppressed\n    result = f(*a, **kw)\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-12/repo/tests/test_selector.py\", line 128, in test_selector_bad_args\n    Selector(TextResponse(url='http://example.com', body=b''), text=u'')\n  File \"/home/espeescobar/.pyenv/versions/3.8.3/lib/python3.8/unittest/case.py\", line 227, in __exit__\n    self._raiseFailure(\"{} not raised\".format(exc_name))\n  File \"/home/espeescobar/.pyenv/versions/3.8.3/lib/python3.8/unittest/case.py\", line 164, in _raiseFailure\n    raise self.test_case.failureException(msg)\ntwisted.trial.unittest.FailTest: ValueError not raised\n\n----------------------------------------------------------------------\nRan 1 test in 0.151s\n\nFAILED (failures=1)\n",
+  "salida_tests": "/home/espeescobar/Testing/T2/dataset/scrapy-12/repo/tests/test_selector.py:127: DeprecationWarning: Please use assertRaisesRegex instead.\n  with self.assertRaisesRegexp(ValueError, 'received both response and text'):\n======================================================================\nFAIL: test_selector_bad_args (tests.test_selector.SelectorTestCase)\ntest_selector_bad_args\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-12/repo/env/lib/python3.8/site-packages/twisted/internet/defer.py\", line 151, in maybeDeferred\n    result = f(*args, **kw)\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-12/repo/env/lib/python3.8/site-packages/twisted/internet/utils.py\", line 221, in runWithWarningsSuppressed\n    reraise(exc_info[1], exc_info[2])\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-12/repo/env/lib/python3.8/site-packages/twisted/python/compat.py\", line 464, in reraise\n    raise exception.with_traceback(traceback)\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-12/repo/env/lib/python3.8/site-packages/twisted/internet/utils.py\", line 217, in runWithWarningsSuppressed\n    result = f(*a, **kw)\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-12/repo/tests/test_selector.py\", line 128, in test_selector_bad_args\n    Selector(TextResponse(url='http://example.com', body=b''), text=u'')\n  File \"/home/espeescobar/.pyenv/versions/3.8.3/lib/python3.8/unittest/case.py\", line 227, in __exit__\n    self._raiseFailure(\"{} not raised\".format(exc_name))\n  File \"/home/espeescobar/.pyenv/versions/3.8.3/lib/python3.8/unittest/case.py\", line 164, in _raiseFailure\n    raise self.test_case.failureException(msg)\ntwisted.trial.unittest.FailTest: ValueError not raised\n\n----------------------------------------------------------------------\nRan 1 test in 0.184s\n\nFAILED (failures=1)\n",
   "codigo_test": "# tests/test_selector.py\n    def test_selector_bad_args(self):\n        with self.assertRaisesRegexp(ValueError, 'received both response and text'):\n            Selector(TextResponse(url='http://example.com', body=b''), text=u'')\n\n\n\n",
   "datos_test": {}
 }

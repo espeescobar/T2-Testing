@@ -2,38 +2,38 @@
   "regiones": [
     {
       "archivo": "scrapy/http/cookies.py",
-      "inicio": 121,
-      "fin": 122,
-      "funcion": "WrappedRequest.get_full_url"
+      "inicio": 118,
+      "fin": 119,
+      "funcion": "WrappedRequest.__init__"
+    },
+    {
+      "archivo": "scrapy/http/request/__init__.py",
+      "inicio": 19,
+      "fin": 38,
+      "funcion": "Request.__init__"
+    },
+    {
+      "archivo": "scrapy/http/request/__init__.py",
+      "inicio": 49,
+      "fin": 57,
+      "funcion": "Request._set_url"
+    },
+    {
+      "archivo": "scrapy/http/request/__init__.py",
+      "inicio": 64,
+      "fin": 68,
+      "funcion": "Request._set_body"
     },
     {
       "archivo": "scrapy/http/cookies.py",
       "inicio": 124,
       "fin": 125,
       "funcion": "WrappedRequest.get_host"
-    },
-    {
-      "archivo": "scrapy/http/cookies.py",
-      "inicio": 127,
-      "fin": 128,
-      "funcion": "WrappedRequest.get_type"
-    },
-    {
-      "archivo": "scrapy/http/cookies.py",
-      "inicio": 145,
-      "fin": 146,
-      "funcion": "WrappedRequest.get_origin_req_host"
-    },
-    {
-      "archivo": "scrapy/utils/decorators.py",
-      "inicio": 15,
-      "fin": 21,
-      "funcion": "deprecated.deco.wrapped"
     }
   ],
-  "analisis": "La clase WrappedRequest en scrapy/http/cookies.py implementa los métodos para simular una petición de urllib2 pero le faltan las propiedades correspondientes (full_url, host, type, origin_req_host) que se están testeando.",
+  "analisis": "La clase WrappedRequest no define las propiedades full_url, host, type y origin_req_host esperadas por urllib2, debido a que su __init__ o la clase misma no mapea estos atributos.",
   "tests_pasaban": false,
-  "salida_tests": "======================================================================\nERROR: test_get_full_url (tests.test_http_cookies.WrappedRequestTest)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-19/repo/tests/test_http_cookies.py\", line 17, in test_get_full_url\n    self.assertEqual(self.wrapped.full_url, self.request.url)\nAttributeError: 'WrappedRequest' object has no attribute 'full_url'\n\n----------------------------------------------------------------------\nRan 1 test in 0.002s\n\nFAILED (errors=1)\n======================================================================\nERROR: test_get_host (tests.test_http_cookies.WrappedRequestTest)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-19/repo/tests/test_http_cookies.py\", line 21, in test_get_host\n    self.assertEqual(self.wrapped.host, urlparse(self.request.url).netloc)\nAttributeError: 'WrappedRequest' object has no attribute 'host'\n\n----------------------------------------------------------------------\nRan 1 test in 0.002s\n\nFAILED (errors=1)\n======================================================================\nERROR: test_get_type (tests.test_http_cookies.WrappedRequestTest)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-19/repo/tests/test_http_cookies.py\", line 25, in test_get_type\n    self.assertEqual(self.wrapped.type, urlparse(self.request.url).scheme)\nAttributeError: 'WrappedRequest' object has no attribute 'type'\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (errors=1)\n======================================================================\nERROR: test_get_origin_req_host (tests.test_http_cookies.WrappedRequestTest)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-19/repo/tests/test_http_cookies.py\", line 38, in test_get_origin_req_host\n    self.assertEqual(self.wrapped.origin_req_host, 'www.example.com')\nAttributeError: 'WrappedRequest' object has no attribute 'origin_req_host'\n\n----------------------------------------------------------------------\nRan 1 test in 0.002s\n\nFAILED (errors=1)\n",
+  "salida_tests": "======================================================================\nERROR: test_get_full_url (tests.test_http_cookies.WrappedRequestTest)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-19/repo/tests/test_http_cookies.py\", line 17, in test_get_full_url\n    self.assertEqual(self.wrapped.full_url, self.request.url)\nAttributeError: 'WrappedRequest' object has no attribute 'full_url'\n\n----------------------------------------------------------------------\nRan 1 test in 0.004s\n\nFAILED (errors=1)\n======================================================================\nERROR: test_get_host (tests.test_http_cookies.WrappedRequestTest)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-19/repo/tests/test_http_cookies.py\", line 21, in test_get_host\n    self.assertEqual(self.wrapped.host, urlparse(self.request.url).netloc)\nAttributeError: 'WrappedRequest' object has no attribute 'host'\n\n----------------------------------------------------------------------\nRan 1 test in 0.002s\n\nFAILED (errors=1)\n======================================================================\nERROR: test_get_type (tests.test_http_cookies.WrappedRequestTest)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-19/repo/tests/test_http_cookies.py\", line 25, in test_get_type\n    self.assertEqual(self.wrapped.type, urlparse(self.request.url).scheme)\nAttributeError: 'WrappedRequest' object has no attribute 'type'\n\n----------------------------------------------------------------------\nRan 1 test in 0.002s\n\nFAILED (errors=1)\n======================================================================\nERROR: test_get_origin_req_host (tests.test_http_cookies.WrappedRequestTest)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-19/repo/tests/test_http_cookies.py\", line 38, in test_get_origin_req_host\n    self.assertEqual(self.wrapped.origin_req_host, 'www.example.com')\nAttributeError: 'WrappedRequest' object has no attribute 'origin_req_host'\n\n----------------------------------------------------------------------\nRan 1 test in 0.002s\n\nFAILED (errors=1)\n",
   "codigo_test": "# tests/test_http_cookies.py\n    def test_get_full_url(self):\n        self.assertEqual(self.wrapped.get_full_url(), self.request.url)\n        self.assertEqual(self.wrapped.full_url, self.request.url)\n\n\n# tests/test_http_cookies.py\n    def test_get_host(self):\n        self.assertEqual(self.wrapped.get_host(), urlparse(self.request.url).netloc)\n        self.assertEqual(self.wrapped.host, urlparse(self.request.url).netloc)\n\n\n# tests/test_http_cookies.py\n    def test_get_type(self):\n        self.assertEqual(self.wrapped.get_type(), urlparse(self.request.url).scheme)\n        self.assertEqual(self.wrapped.type, urlparse(self.request.url).scheme)\n\n\n# tests/test_http_cookies.py\n    def test_get_origin_req_host(self):\n        self.assertEqual(self.wrapped.get_origin_req_host(), 'www.example.com')\n        self.assertEqual(self.wrapped.origin_req_host, 'www.example.com')\n\n\n",
   "datos_test": {}
 }

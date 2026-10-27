@@ -2,7 +2,7 @@
   "bug": "fastapi-7",
   "modelo": "gemini-3.5-flash-lite",
   "llamadas": 2,
-  "tokens_entrada": 6042,
-  "tokens_salida": 364,
-  "segundos": 5.9
+  "tokens_entrada": 4147,
+  "tokens_salida": 299,
+  "segundos": 6.2
 }

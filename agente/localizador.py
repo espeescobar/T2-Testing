@@ -427,11 +427,14 @@ def buscar_candidatos(repo, frames: list, palabras: set, salida: str, anclajes=N
     todas = listar_funciones(repo)
     candidatos = {}  # clave: (archivo, inicio, fin)
 
-    def sumar(funcion, puntos, linea_error=None):
+    def sumar(funcion, puntos, linea_error=None, maximo=False):
         clave = (funcion["archivo"], funcion["inicio"], funcion["fin"])
         if clave not in candidatos:
             candidatos[clave] = {"funcion": funcion, "puntos": 0, "linea_error": linea_error}
-        candidatos[clave]["puntos"] += puntos
+        if maximo:
+            candidatos[clave]["puntos"] = max(candidatos[clave]["puntos"], puntos)
+        else:
+            candidatos[clave]["puntos"] += puntos
         if linea_error and candidatos[clave]["linea_error"] is None:
             candidatos[clave]["linea_error"] = linea_error
 
@@ -451,7 +454,7 @@ def buscar_candidatos(repo, frames: list, palabras: set, salida: str, anclajes=N
             total = len(leer_lineas(repo, archivo))
             mejor = {"archivo": archivo, "nombre": "<modulo>", "tipo": "modulo",
                      "inicio": max(1, linea - 12), "fin": min(total, linea + 12)}
-        sumar(mejor, max(40, 200 - 15 * pos), linea)
+        sumar(mejor, max(40, 200 - 15 * pos), linea, maximo=True)
 
     # (a2) simbolos que el test importa o asigna (self.x = Clase), cuando el error
     # no llega a entrar al proyecto
@@ -614,7 +617,7 @@ def funciones_relacionadas(repo, funcion, limite=2) -> list:
     mismas = funciones_invocadas(repo, funcion)
     otras = _callees_en_otros_modulos(repo, funcion)
     if otras and mismas:
-        elegidas = otras[:1] + mismas[:1]
+        elegidas = otras[:2] + mismas[:2]
     elif otras:
         elegidas = otras
     else:
@@ -644,7 +647,7 @@ def intercalar_callees(repo, regiones: list) -> list:
             extra = hacer_region({"funcion": funcion, "linea_error": funcion["inicio"]})
             extra["relacionada"] = True
             agregar(extra)
-            if len(salida) >= 4:
+            if len(salida) >= 5:
                 break
     return salida
 

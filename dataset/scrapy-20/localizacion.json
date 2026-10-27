@@ -13,27 +13,21 @@
       "funcion": "SitemapSpider._parse_sitemap"
     },
     {
-      "archivo": "scrapy/crawler.py",
-      "inicio": 53,
-      "fin": 62,
-      "funcion": "Crawler.spiders"
+      "archivo": "scrapy/utils/sitemap.py",
+      "inicio": 14,
+      "fin": 18,
+      "funcion": "Sitemap.__init__"
     },
     {
-      "archivo": "scrapy/crawler.py",
-      "inicio": 122,
-      "fin": 127,
-      "funcion": "CrawlerRunner.spiders"
-    },
-    {
-      "archivo": "scrapy/utils/test.py",
-      "inicio": 23,
-      "fin": 32,
-      "funcion": "get_crawler"
+      "archivo": "scrapy/utils/sitemap.py",
+      "inicio": 20,
+      "fin": 34,
+      "funcion": "Sitemap.__iter__"
     }
   ],
-  "analisis": "El error indica un TypeError al usar startswith con str en lugar de bytes sobre response.body, lo cual ocurre en sitemap_urls_from_robots llamado desde _parse_sitemap.",
+  "analisis": "La función sitemap_urls_from_robots compara bytes con un string en startswith causando el TypeError.",
   "tests_pasaban": false,
-  "salida_tests": "======================================================================\nERROR: test_get_sitemap_urls_from_robotstxt (tests.test_spider.SitemapSpiderTest)\ntest_get_sitemap_urls_from_robotstxt\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-20/repo/env/lib/python3.8/site-packages/twisted/internet/defer.py\", line 151, in maybeDeferred\n    result = f(*args, **kw)\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-20/repo/env/lib/python3.8/site-packages/twisted/internet/utils.py\", line 221, in runWithWarningsSuppressed\n    reraise(exc_info[1], exc_info[2])\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-20/repo/env/lib/python3.8/site-packages/twisted/python/compat.py\", line 464, in reraise\n    raise exception.with_traceback(traceback)\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-20/repo/env/lib/python3.8/site-packages/twisted/internet/utils.py\", line 217, in runWithWarningsSuppressed\n    result = f(*a, **kw)\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-20/repo/tests/test_spider.py\", line 339, in test_get_sitemap_urls_from_robotstxt\n    self.assertEqual([req.url for req in spider._parse_sitemap(r)],\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-20/repo/tests/test_spider.py\", line 339, in <listcomp>\n    self.assertEqual([req.url for req in spider._parse_sitemap(r)],\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-20/repo/scrapy/spiders/sitemap.py\", line 35, in _parse_sitemap\n    for url in sitemap_urls_from_robots(response.body):\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-20/repo/scrapy/utils/sitemap.py\", line 42, in sitemap_urls_from_robots\n    if line.lstrip().startswith('Sitemap:'):\nTypeError: startswith first arg must be bytes or a tuple of bytes, not str\n\n----------------------------------------------------------------------\nRan 1 test in 0.104s\n\nFAILED (errors=1)\n",
+  "salida_tests": "======================================================================\nERROR: test_get_sitemap_urls_from_robotstxt (tests.test_spider.SitemapSpiderTest)\ntest_get_sitemap_urls_from_robotstxt\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-20/repo/env/lib/python3.8/site-packages/twisted/internet/defer.py\", line 151, in maybeDeferred\n    result = f(*args, **kw)\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-20/repo/env/lib/python3.8/site-packages/twisted/internet/utils.py\", line 221, in runWithWarningsSuppressed\n    reraise(exc_info[1], exc_info[2])\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-20/repo/env/lib/python3.8/site-packages/twisted/python/compat.py\", line 464, in reraise\n    raise exception.with_traceback(traceback)\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-20/repo/env/lib/python3.8/site-packages/twisted/internet/utils.py\", line 217, in runWithWarningsSuppressed\n    result = f(*a, **kw)\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-20/repo/tests/test_spider.py\", line 339, in test_get_sitemap_urls_from_robotstxt\n    self.assertEqual([req.url for req in spider._parse_sitemap(r)],\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-20/repo/tests/test_spider.py\", line 339, in <listcomp>\n    self.assertEqual([req.url for req in spider._parse_sitemap(r)],\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-20/repo/scrapy/spiders/sitemap.py\", line 35, in _parse_sitemap\n    for url in sitemap_urls_from_robots(response.body):\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-20/repo/scrapy/utils/sitemap.py\", line 42, in sitemap_urls_from_robots\n    if line.lstrip().startswith('Sitemap:'):\nTypeError: startswith first arg must be bytes or a tuple of bytes, not str\n\n----------------------------------------------------------------------\nRan 1 test in 0.110s\n\nFAILED (errors=1)\n",
   "codigo_test": "# tests/test_spider.py\n    def test_get_sitemap_urls_from_robotstxt(self):\n        robots = b\"\"\"# Sitemap files\n\n",
   "datos_test": {}
 }

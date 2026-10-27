@@ -1,10 +1,10 @@
 {
   "regiones": [
     {
-      "archivo": "scrapy/http/cookies.py",
-      "inicio": 173,
-      "fin": 174,
-      "funcion": "WrappedResponse.get_all"
+      "archivo": "scrapy/utils/python.py",
+      "inicio": 97,
+      "fin": 107,
+      "funcion": "to_unicode"
     },
     {
       "archivo": "scrapy/utils/python.py",
@@ -13,10 +13,10 @@
       "funcion": "to_native_str"
     },
     {
-      "archivo": "scrapy/utils/python.py",
-      "inicio": 97,
-      "fin": 107,
-      "funcion": "to_unicode"
+      "archivo": "scrapy/http/cookies.py",
+      "inicio": 173,
+      "fin": 174,
+      "funcion": "WrappedResponse.get_all"
     },
     {
       "archivo": "scrapy/http/cookies.py",
@@ -31,9 +31,9 @@
       "funcion": "CookiesMiddleware.process_response"
     }
   ],
-  "analisis": "to_native_str no maneja adecuadamente los headers con codificación no-utf8 durante la extracción de cookies en WrappedResponse.get_all",
+  "analisis": "El error ocurre al decodificar cabeceras non-utf8 usando to_native_str dentro de WrappedResponse.get_all",
   "tests_pasaban": false,
-  "salida_tests": "======================================================================\nERROR: test_do_not_break_on_non_utf8_header (tests.test_downloadermiddleware_cookies.CookiesMiddlewareTest)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-31/repo/tests/test_downloadermiddleware_cookies.py\", line 45, in test_do_not_break_on_non_utf8_header\n    assert self.mw.process_response(req, res, self.spider) is res\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-31/repo/scrapy/downloadermiddlewares/cookies.py\", line 48, in process_response\n    jar.extract_cookies(response, request)\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-31/repo/scrapy/http/cookies.py\", line 20, in extract_cookies\n    return self.jar.extract_cookies(wrsp, wreq)\n  File \"/home/espeescobar/.pyenv/versions/3.8.3/lib/python3.8/http/cookiejar.py\", line 1682, in extract_cookies\n    for cookie in self.make_cookies(response, request):\n  File \"/home/espeescobar/.pyenv/versions/3.8.3/lib/python3.8/http/cookiejar.py\", line 1601, in make_cookies\n    ns_hdrs = headers.get_all(\"Set-Cookie\", [])\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-31/repo/scrapy/http/cookies.py\", line 174, in get_all\n    return [to_native_str(v) for v in self.response.headers.getlist(name)]\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-31/repo/scrapy/http/cookies.py\", line 174, in <listcomp>\n    return [to_native_str(v) for v in self.response.headers.getlist(name)]\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-31/repo/scrapy/utils/python.py\", line 129, in to_native_str\n    return to_unicode(text, encoding, errors)\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-31/repo/scrapy/utils/python.py\", line 107, in to_unicode\n    return text.decode(encoding, errors)\nUnicodeDecodeError: 'utf-8' codec can't decode byte 0xa3 in position 5: invalid start byte\n\n----------------------------------------------------------------------\nRan 1 test in 0.010s\n\nFAILED (errors=1)\n",
+  "salida_tests": "======================================================================\nERROR: test_do_not_break_on_non_utf8_header (tests.test_downloadermiddleware_cookies.CookiesMiddlewareTest)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-31/repo/tests/test_downloadermiddleware_cookies.py\", line 45, in test_do_not_break_on_non_utf8_header\n    assert self.mw.process_response(req, res, self.spider) is res\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-31/repo/scrapy/downloadermiddlewares/cookies.py\", line 48, in process_response\n    jar.extract_cookies(response, request)\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-31/repo/scrapy/http/cookies.py\", line 20, in extract_cookies\n    return self.jar.extract_cookies(wrsp, wreq)\n  File \"/home/espeescobar/.pyenv/versions/3.8.3/lib/python3.8/http/cookiejar.py\", line 1682, in extract_cookies\n    for cookie in self.make_cookies(response, request):\n  File \"/home/espeescobar/.pyenv/versions/3.8.3/lib/python3.8/http/cookiejar.py\", line 1601, in make_cookies\n    ns_hdrs = headers.get_all(\"Set-Cookie\", [])\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-31/repo/scrapy/http/cookies.py\", line 174, in get_all\n    return [to_native_str(v) for v in self.response.headers.getlist(name)]\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-31/repo/scrapy/http/cookies.py\", line 174, in <listcomp>\n    return [to_native_str(v) for v in self.response.headers.getlist(name)]\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-31/repo/scrapy/utils/python.py\", line 129, in to_native_str\n    return to_unicode(text, encoding, errors)\n  File \"/home/espeescobar/Testing/T2/dataset/scrapy-31/repo/scrapy/utils/python.py\", line 107, in to_unicode\n    return text.decode(encoding, errors)\nUnicodeDecodeError: 'utf-8' codec can't decode byte 0xa3 in position 5: invalid start byte\n\n----------------------------------------------------------------------\nRan 1 test in 0.002s\n\nFAILED (errors=1)\n",
   "codigo_test": "# tests/test_downloadermiddleware_cookies.py\n    def test_do_not_break_on_non_utf8_header(self):\n        req = Request('http://scrapytest.org/')\n        assert self.mw.process_request(req, self.spider) is None\n        assert 'Cookie' not in req.headers\n\n        headers = {'Set-Cookie': b'C1=in\\xa3valid; path=/',\n                   'Other': b'ignore\\xa3me'}\n        res = Response('http://scrapytest.org/', headers=headers)\n        assert self.mw.process_response(req, res, self.spider) is res\n\n        req2 = Request('http://scrapytest.org/sub1/')\n        assert self.mw.process_request(req2, self.spider) is None\n        self.assertIn('Cookie', req2.headers)\n\n\n",
   "datos_test": {}
 }
